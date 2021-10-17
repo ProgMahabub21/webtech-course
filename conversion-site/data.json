@@ -1,0 +1,14 @@
+
+[{
+    "Category": "feet_to_inch",
+    "unit": "1",
+    "rate": "12"
+},{
+    "Category": "kg_to_gram",
+    "unit": "1",
+    "rate": "1000"
+},{
+    "Category": "lb_to_kg",
+    "unit": "2.20462",
+    "rate": "1"
+}]
