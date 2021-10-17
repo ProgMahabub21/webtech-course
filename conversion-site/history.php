@@ -10,11 +10,17 @@
     <p><h1>Page 3 [History]</h1></p>
     <p><h3>Conversion SIte</h3></p>
     <p>1. <a href="home.php">Home</a> 2. <a href="conversion-rate.php">Conversion Rate</a> 3. <a href="history.php">History</a></p><br>
-    <p><h2>Converter:</h2></p><br>
+   
 
-    <form action="">
-
-    </form>
-
+    <?php
+    $existingData = json_decode(file_get_contents("history.json",true));
+            echo "<table border='1'>";
+            foreach ($existingData as $key => $value) {
+                
+                echo "<tr><td>" . $value->Unit. "</td><td>". $value->input ."</td><td>".$value->output ."</td></tr>";
+                
+            }
+            echo "</table>";
+    ?>
 </body>
 </html>

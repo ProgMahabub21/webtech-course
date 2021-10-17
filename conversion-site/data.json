@@ -11,4 +11,14 @@
     "Category": "lb_to_kg",
     "unit": "2.20462",
     "rate": "1"
-}]
+}
+,{
+    "Category": "litre_to_ml",
+    "unit": "1",
+    "rate": "1000"
+},{
+    "Category": "km_to_m",
+    "unit": "1",
+    "rate": "1000"
+}
+]

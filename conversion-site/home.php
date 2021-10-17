@@ -34,21 +34,25 @@
 			
 			$input = $_POST['input'];
 			$category = $_POST['category'];
-            
-            $str_data = file_get_contents("data.json");
-            $data = json_decode($str_data, true);
 
-            for($i = 0; $i < sizeof($data["rate"]); $i++)
-            {
-                if($category == $data["rate"][$i]["Category"] ) 
+            $existingData = json_decode(file_get_contents("data.json",true));
+            foreach ($existingData as $key => $value) {
+                if($category == ".".$value->Category.".")
                 {
-                    $rate = $data["rate"][$i]["rate"];
+                    $rate = $value->rate;
                     break;
                 }
-           
             }
-            $sum = $input * $rate;
+            $sum =(int)$input * (int)$rate;
             echo "Result:<input type='text' value='$sum'/>";
+
+
+            $array =array('Unit'=>($category),'input'=>($input),'output'=>($sum));
+
+            $fm = fopen('history.json', 'a+');
+            fwrite($fm, json_encode($array, JSON_PRETTY_PRINT));  
+            fclose($fm);
+
 		}
 
     ?>

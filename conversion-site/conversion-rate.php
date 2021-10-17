@@ -47,12 +47,13 @@
 
 
         $existingData = json_decode(file_get_contents("data.json",true));
+                echo "<table border='1'>";
             foreach ($existingData as $key => $value) {
-                echo "<table>";
+                
                 echo "<tr><td>" . $value->Category. "</td><td>". $value->unit ."</td><td>".$value->rate ."</td></tr>";
-                echo "</table>";
+                
             }
-
+            echo "</table>";
 
 	?>
 </body>
