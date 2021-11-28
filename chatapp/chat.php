@@ -105,7 +105,7 @@
                         // document.getElementById("result").innerHTML = this.responseText;
                     }
                 };
-                xhttp.open("GET", "../back-end/chat.php?q=" + msg, true);
+                xhttp.open("GET", "chatdb.php?q=" + msg, true);
                 xhttp.send();
 
                 return true;
